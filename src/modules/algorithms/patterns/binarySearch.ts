@@ -1,0 +1,70 @@
+export const binarySearchPattern = {
+  id: 'binary-search',
+  title: 'Binary search',
+  summary: 'Work through an ordered range: set the bounds, check the middle, and keep one half.',
+  steps: [
+    {
+      id: 'bounds',
+      title: 'Set left and right',
+      description: 'Start at the first and last indices of the search range.',
+      instructions: ['bounds'],
+    },
+    {
+      id: 'loop',
+      title: 'Start the while loop',
+      description: 'Continue while left ≤ right: there is still an index to check.',
+      instructions: ['loop'],
+      explanations: [
+        {
+          instruction: 'loop',
+          outcome: false,
+          text: 'The range is empty. Finish with the result required by the problem.',
+        },
+      ],
+    },
+    {
+      id: 'midpoint',
+      title: 'Compute mid',
+      description: 'Find the middle index of the current range. Round down.',
+      instructions: ['midpoint'],
+    },
+    {
+      id: 'check',
+      title: 'Check the middle',
+      description: 'Apply the problem’s comparison. Save a candidate if needed.',
+      instructions: ['check', 'record'],
+    },
+    {
+      id: 'update',
+      title: 'Update the bounds or stop',
+      description: 'Move one bound past mid, or stop if the result is settled.',
+      instructions: ['search-left', 'right', 'search-right', 'left', 'else', 'stop'],
+      explanations: [
+        { instruction: 'right', text: 'Keep the left half: right moves to mid − 1.' },
+        { instruction: 'left', text: 'Keep the right half: left moves to mid + 1.' },
+        { instruction: 'stop', text: 'The result is settled. Stop searching.' },
+      ],
+    },
+    {
+      id: 'finish',
+      title: 'Return the result',
+      description: 'Return the saved answer or the problem’s no-match result.',
+      instructions: ['return'],
+    },
+  ],
+  repeat: { from: 'loop', through: 'update', label: 'Repeat steps 2–5 after moving a bound.' },
+  pseudocode: [
+    { id: 'bounds', text: 'left ← 0, right ← n − 1', indent: 0 },
+    { id: 'loop', text: 'while left ≤ right', indent: 0 },
+    { id: 'midpoint', text: 'mid ← floor((left + right) / 2)', indent: 1 },
+    { id: 'check', text: 'check A[mid]', indent: 1 },
+    { id: 'record', text: 'record a candidate if needed', indent: 1, customizable: true },
+    { id: 'search-left', text: 'if continue on the left', indent: 1, customizable: true },
+    { id: 'right', text: 'right ← mid − 1', indent: 2 },
+    { id: 'search-right', text: 'else if continue on the right', indent: 1, customizable: true },
+    { id: 'left', text: 'left ← mid + 1', indent: 2 },
+    { id: 'else', text: 'else', indent: 1 },
+    { id: 'stop', text: 'stop', indent: 2 },
+    { id: 'return', text: 'return the result', indent: 0, customizable: true },
+  ],
+} as const

@@ -1,0 +1,86 @@
+.algorithms-module {
+  --algo-canvas: #fafbfc;
+  --algo-paper: #ffffff;
+  --algo-ink: #242938;
+  --algo-secondary: #565e70;
+  --algo-muted: #70798a;
+  --algo-line: #e8ebf0;
+  --algo-soft: #f5f6f8;
+  --algo-selected-soft: var(--algo-success-soft);
+  --algo-selected-line: var(--algo-success-line);
+  --algo-accent: #425ee8;
+  --algo-accent-hover: #304acb;
+  --algo-accent-soft: #f0f3ff;
+  --algo-accent-line: #cbd4fc;
+  --algo-pattern: #6b527f;
+  --algo-pattern-fill: #e3d9f0;
+  --algo-pattern-soft: #f4eff8;
+  --algo-result: #80552b;
+  --algo-result-soft: #fff4e5;
+  --algo-result-line: #efd8b6;
+  --algo-success: #27806c;
+  --algo-error: #b04444;
+  --algo-success-soft: #f0f8f4;
+  --algo-success-line: #91c6b3;
+  --algo-radius-sm: 6px;
+  --algo-radius: 10px;
+  --algo-radius-lg: 14px;
+  --algo-space-1: 4px;
+  --algo-space-2: 8px;
+  --algo-space-3: 12px;
+  --algo-space-4: 16px;
+  --algo-space-5: 20px;
+  --algo-space-6: 24px;
+  --algo-space-8: 32px;
+  --algo-space-10: 40px;
+  --algo-space-12: 48px;
+  --algo-text-xs: 11px;
+  --algo-text-sm: 12px;
+  --algo-text-base: 13px;
+  --algo-text-body: 14px;
+  --algo-text-value: 18px;
+  --algo-text-title: 22px;
+  --algo-text-heading: 28px;
+  --algo-font: 'Inter Variable', 'Segoe UI', sans-serif;
+  --algo-mono: 'JetBrains Mono Variable', Consolas, monospace;
+  --algo-code-indent: 4ch;
+  --algo-code-row: 36px;
+  --algo-code-gutter: 30px;
+  --algo-solution-width: 500px;
+  --algo-library-width: 1056px;
+  --algo-workspace-width: 1416px;
+  --algo-array-gap: 5px;
+  --algo-pointer-edge: 10px;
+  --algo-arrow-stroke: 2px;
+  --algo-pointer-stem: 14px;
+  --algo-pointer-lane: 34px;
+  --algo-pointer-top-space: 88px;
+  --algo-pointer-bottom-space: 100px;
+  --algo-pointer-motion: 260ms ease;
+  --algo-motion: 180ms ease;
+  min-height: 100vh;
+  color: var(--algo-ink);
+  background: var(--algo-canvas);
+  color-scheme: light;
+  font-family: var(--algo-font);
+  font-size: var(--algo-text-body);
+  line-height: 1.5;
+}
+.algorithms-module ::selection {
+  background: var(--algo-accent-line);
+  color: var(--algo-ink);
+}
+.algorithms-module .algo-mono {
+  font-family: var(--algo-mono);
+  font-variant-numeric: tabular-nums;
+}
+.algorithms-module .algo-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
